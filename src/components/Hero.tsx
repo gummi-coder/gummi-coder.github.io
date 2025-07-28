@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play, Star } from "lucide-react";
+import { Link } from "react-router-dom";
 import heroImage from "@/assets/hero-fitness.jpg";
 
 export default function Hero() {
@@ -57,15 +58,16 @@ export default function Hero() {
           
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button 
-              variant="hero" 
-              size="lg" 
-              className="text-lg px-8 py-6"
-              onClick={() => window.location.href = '/contact'}
-            >
-              Byrjaðu í dag
-              <ArrowRight className="w-5 h-5" />
-            </Button>
+            <Link to="/contact">
+              <Button 
+                variant="hero" 
+                size="lg" 
+                className="text-lg px-8 py-6"
+              >
+                Byrjaðu í dag
+                <ArrowRight className="w-5 h-5" />
+              </Button>
+            </Link>
           </div>
           
           {/* Trust Indicator */}

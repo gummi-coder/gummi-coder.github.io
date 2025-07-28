@@ -10,6 +10,7 @@ import {
   Heart
 } from "lucide-react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const testimonials = [
   {
@@ -230,13 +231,14 @@ export default function Reviews() {
             <p className="text-muted-foreground mb-6">
               Vertu hluti af þeim íslendingum sem hafa gjörbreytt lífi sínu
             </p>
-            <Button 
-              variant="hero" 
-              size="lg"
-              onClick={() => window.location.href = '/contact'}
-            >
-              Byrjaðu í dag
-            </Button>
+            <Link to="/contact">
+              <Button 
+                variant="hero" 
+                size="lg"
+              >
+                Byrjaðu í dag
+              </Button>
+            </Link>
           </Card>
         </div>
       </div>

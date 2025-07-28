@@ -8,6 +8,7 @@ import {
   MapPin,
   Phone
 } from "lucide-react";
+import { Link } from "react-router-dom";
 import logo from "@/assets/gf-training-logo.png";
 import { NewsletterSignup } from "./NewsletterSignup";
 
@@ -70,9 +71,9 @@ export default function Footer() {
             <h4 className="font-semibold text-foreground mb-4">Stuðningur</h4>
             <ul className="space-y-2">
               <li><a href="#" className="text-muted-foreground hover:text-foreground transition-smooth">Hjálpasvið</a></li>
-              <li><a href="/contact" className="text-muted-foreground hover:text-foreground transition-smooth">Hafðu samband</a></li>
-              <li><a href="/skilmalar" className="text-muted-foreground hover:text-foreground transition-smooth">Skilmálar</a></li>
-              <li><a href="/skilmalar" className="text-muted-foreground hover:text-foreground transition-smooth">Persónuverndarstefna</a></li>
+              <li><Link to="/contact" className="text-muted-foreground hover:text-foreground transition-smooth">Hafðu samband</Link></li>
+              <li><Link to="/skilmalar" className="text-muted-foreground hover:text-foreground transition-smooth">Skilmálar</Link></li>
+              <li><Link to="/skilmalar" className="text-muted-foreground hover:text-foreground transition-smooth">Persónuverndarstefna</Link></li>
             </ul>
           </div>
           

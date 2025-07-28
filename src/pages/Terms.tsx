@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { ArrowLeft } from "lucide-react";
+import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
@@ -14,15 +15,16 @@ const Terms = () => {
           <div className="max-w-4xl mx-auto">
             {/* Back Button */}
             <div className="mb-6">
-              <Button 
-                variant="ghost" 
-                size="sm" 
-                onClick={() => window.location.href = '/'}
-                className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-smooth"
-              >
-                <ArrowLeft className="w-4 h-4" />
-                Til baka á forsíðu
-              </Button>
+              <Link to="/">
+                <Button 
+                  variant="ghost" 
+                  size="sm" 
+                  className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-smooth"
+                >
+                  <ArrowLeft className="w-4 h-4" />
+                  Til baka á forsíðu
+                </Button>
+              </Link>
             </div>
             
             <div className="text-center mb-12">

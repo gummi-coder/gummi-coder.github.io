@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Check, Zap, Crown, Star } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const plans = [
   {
@@ -134,14 +135,15 @@ export default function PricingPlans() {
                 </ul>
                 
                 {/* CTA Button */}
-                <Button 
-                  variant={plan.popular ? "hero" : "outline"} 
-                  size="lg" 
-                  className="w-full"
-                  onClick={() => window.location.href = '/contact'}
-                >
-                  {plan.popular ? "Byrjaðu í dag" : "Byrjaðu í dag"}
-                </Button>
+                <Link to="/contact" className="w-full">
+                  <Button 
+                    variant={plan.popular ? "hero" : "outline"} 
+                    size="lg" 
+                    className="w-full"
+                  >
+                    {plan.popular ? "Byrjaðu í dag" : "Byrjaðu í dag"}
+                  </Button>
+                </Link>
               </Card>
             );
           })}

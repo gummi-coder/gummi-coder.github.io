@@ -10,6 +10,7 @@ import {
   Heart,
   Zap
 } from "lucide-react";
+import { Link } from "react-router-dom";
 import coachImage from "@/assets/coach-photo.jpg";
 
 const stats = [
@@ -106,13 +107,14 @@ export default function About() {
               </div>
             </div>
 
-            <Button 
-              variant="hero" 
-              size="lg"
-              onClick={() => window.location.href = '/contact'}
-            >
-              Byrjaðu núna
-            </Button>
+            <Link to="/contact">
+              <Button 
+                variant="hero" 
+                size="lg"
+              >
+                Byrjaðu núna
+              </Button>
+            </Link>
           </div>
         </div>
 
