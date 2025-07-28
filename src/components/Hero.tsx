@@ -17,7 +17,7 @@ export default function Hero() {
       </div>
       
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 sm:px-6 text-center">
+      <div className="relative z-10 container mx-auto px-6 text-center">
         <div className="max-w-4xl mx-auto">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-full px-4 py-2 mb-6">
@@ -26,11 +26,16 @@ export default function Hero() {
           </div>
           
           {/* Main Heading */}
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-foreground mb-4 sm:mb-6 leading-tight">
-            <span className="block sm:inline">Þar sem líkamlegur</span>
-            <span className="bg-gradient-primary bg-clip-text text-transparent block sm:inline"> styrkur</span>
-            <span className="block sm:inline">mætir andlegu</span>
-            <span className="bg-gradient-secondary bg-clip-text text-transparent block sm:inline"> jafnvægi</span>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-foreground mb-6 leading-tight">
+            <div className="block sm:inline">
+              <span className="inline">Þar sem líkamlegur</span>
+              <span className="bg-gradient-primary bg-clip-text text-transparent inline"> styrkur</span>
+            </div>
+            <br className="hidden sm:block" />
+            <div className="block sm:inline">
+              <span className="inline">mætir andlegu</span>
+              <span className="bg-gradient-secondary bg-clip-text text-transparent inline"> jafnvægi</span>
+            </div>
           </h1>
           
           {/* Subtitle */}
@@ -60,7 +65,7 @@ export default function Hero() {
               <Button 
                 variant="hero" 
                 size="lg" 
-                className="text-lg px-8 py-6 w-full sm:w-auto"
+                className="text-lg px-8 py-6"
               >
                 Byrjaðu í dag
                 <ArrowRight className="w-5 h-5" />
