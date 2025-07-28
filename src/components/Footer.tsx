@@ -90,7 +90,7 @@ export default function Footer() {
           </div>
           
           <div>
-            <h4 className="font-semibold text-foreground mb-4">Stuðningur</h4>
+            <h4 className="font-semibold text-foreground mb-4">Aðstoð</h4>
             <ul className="space-y-2">
               <li><Link to="/contact" className="text-muted-foreground hover:text-foreground transition-smooth">Hafðu samband</Link></li>
               <li><Link to="/skilmalar" className="text-muted-foreground hover:text-foreground transition-smooth">Skilmálar</Link></li>
