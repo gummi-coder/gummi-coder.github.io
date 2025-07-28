@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://gummi-coder.github.io",
+  "homepage": "https://gummi-coder.github.io/",
   "scripts": {
     "dev": "vite",
     "build": "vite build && cp .nojekyll dist/",
