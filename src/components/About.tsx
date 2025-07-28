@@ -107,14 +107,17 @@ export default function About() {
               </div>
             </div>
 
-            <Link to="/contact">
-              <Button 
-                variant="hero" 
-                size="lg"
-              >
-                Byrjaðu núna
-              </Button>
-            </Link>
+            {/* CTA Button with more spacing */}
+            <div className="pt-6">
+              <Link to="/contact">
+                <Button 
+                  variant="hero" 
+                  size="lg"
+                >
+                  Byrjaðu núna
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
 
