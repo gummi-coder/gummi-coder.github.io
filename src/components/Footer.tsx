@@ -8,11 +8,33 @@ import {
   MapPin,
   Phone
 } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import logo from "@/assets/gf-training-logo.png";
 import { NewsletterSignup } from "./NewsletterSignup";
 
 export default function Footer() {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const isHomePage = location.pathname === '/';
+
+  const scrollToSection = (sectionId: string) => {
+    if (isHomePage) {
+      // If we're on the home page, just scroll to the section
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      // If we're on another page, navigate to home and then scroll
+      navigate('/');
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    }
+  };
   return (
     <footer className="bg-secondary/20 border-t border-border/50">
       <div className="container mx-auto px-6 py-16">
@@ -58,12 +80,12 @@ export default function Footer() {
           
           {/* Links */}
           <div>
-            <h4 className="font-semibold text-foreground mb-4">Vettvangur</h4>
+            <h4 className="font-semibold text-foreground mb-4">Heimasíða</h4>
             <ul className="space-y-2">
-              <li><a href="#" className="text-muted-foreground hover:text-foreground transition-smooth">Aftur heim</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-foreground transition-smooth">Þjálfunaráætlanir</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-foreground transition-smooth">Næringaráætlanir</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-foreground transition-smooth">Þjálfunarapp</a></li> 
+              <li><button onClick={() => scrollToSection('thjalfun')} className="text-muted-foreground hover:text-foreground transition-smooth text-left">Þjálfun</button></li>
+              <li><button onClick={() => scrollToSection('verd')} className="text-muted-foreground hover:text-foreground transition-smooth text-left">Verð</button></li>
+              <li><button onClick={() => scrollToSection('um-mig')} className="text-muted-foreground hover:text-foreground transition-smooth text-left">Um mig</button></li>
+              <li><button onClick={() => scrollToSection('umsagnir')} className="text-muted-foreground hover:text-foreground transition-smooth text-left">Umsagnir</button></li> 
             </ul>
           </div>
           
