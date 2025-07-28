@@ -33,7 +33,7 @@ export function NewsletterSignup() {
 
   return (
     <div>
-      <h4 className="font-semibold text-foreground mb-4">Haltu uppáhald</h4>
+      <h4 className="font-semibold text-foreground mb-4">Skráðu þig í póstlista</h4>
       <p className="text-muted-foreground mb-4">
         Fáðu nýjustu upplýsingar um heilsu og líkamsrækt.
       </p>

@@ -92,7 +92,6 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold text-foreground mb-4">Stuðningur</h4>
             <ul className="space-y-2">
-              <li><a href="#" className="text-muted-foreground hover:text-foreground transition-smooth">Hjálpasvið</a></li>
               <li><Link to="/contact" className="text-muted-foreground hover:text-foreground transition-smooth">Hafðu samband</Link></li>
               <li><Link to="/skilmalar" className="text-muted-foreground hover:text-foreground transition-smooth">Skilmálar</Link></li>
               <li><Link to="/skilmalar" className="text-muted-foreground hover:text-foreground transition-smooth">Persónuverndarstefna</Link></li>
