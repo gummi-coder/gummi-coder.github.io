@@ -31,7 +31,7 @@ export default function Hero() {
             <span className="bg-gradient-primary bg-clip-text text-transparent block sm:inline"> styrkur</span>
             <span className="block sm:inline">,</span>
             <br className="hidden sm:block" />
-            <span className="block sm:inline">Mætir andlegu</span>
+            <span className="block sm:inline">mætir andlegu</span>
             <span className="bg-gradient-secondary bg-clip-text text-transparent block sm:inline"> jafnvægi</span>
           </h1>
           

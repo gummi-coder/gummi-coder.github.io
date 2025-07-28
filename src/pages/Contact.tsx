@@ -85,7 +85,7 @@ const Contact = () => {
                           id="name"
                           name="name"
                           type="text"
-                          placeholder="Sláðu inn fullt nafn"
+                          placeholder="Fullt nafn"
                           value={formData.name}
                           onChange={(e) => handleInputChange("name", e.target.value)}
                           className="h-12"
@@ -99,7 +99,7 @@ const Contact = () => {
                           id="email"
                           name="email"
                           type="email"
-                          placeholder="Sláðu inn netfang"
+                          placeholder="Netfang"
                           value={formData.email}
                           onChange={(e) => handleInputChange("email", e.target.value)}
                           className="h-12"
@@ -115,7 +115,7 @@ const Contact = () => {
                           id="phone"
                           name="phone"
                           type="tel"
-                          placeholder="Sláðu inn símanúmer"
+                          placeholder="Símanúmer"
                           value={formData.phone}
                           onChange={(e) => handleInputChange("phone", e.target.value)}
                           className="h-12"
@@ -128,7 +128,7 @@ const Contact = () => {
                           id="kennitala"
                           name="kennitala"
                           type="text"
-                          placeholder="Sláðu inn kennitölu"
+                          placeholder="Kennitala"
                           value={formData.kennitala}
                           onChange={(e) => handleInputChange("kennitala", e.target.value)}
                           className="h-12"
@@ -160,7 +160,7 @@ const Contact = () => {
                     </div>
 
                     <div className="space-y-2">
-                      <Label htmlFor="goals">Aðal markmið þitt? *</Label>
+                      <Label htmlFor="goals">Hvað er markmið þitt? *</Label>
                       <Textarea
                         id="goals"
                         name="goals"
@@ -178,7 +178,7 @@ const Contact = () => {
                     <h3 className="text-lg font-semibold text-foreground border-b border-border pb-2">Val á áætlun</h3>
                     
                     <div className="space-y-2">
-                      <Label htmlFor="plan">Valin æfingaáætlun *</Label>
+                      <Label htmlFor="plan">Veldu æfingaáætlun *</Label>
                       <Select onValueChange={(value) => handleInputChange("plan", value)}>
                         <SelectTrigger className="h-12">
                           <SelectValue placeholder="Veldu æfingaáætlun" />
@@ -202,7 +202,7 @@ const Contact = () => {
                     />
                     <input type="hidden" name="agreeToTerms" value={formData.agreeToTerms ? "yes" : "no"} />
                     <Label htmlFor="terms" className="text-sm">
-                      Ég samþyggi skilmála og persónuverndarstefnu *
+                      Ég samþykki skilmála og persónuverndarstefnu *
                     </Label>
                   </div>
 

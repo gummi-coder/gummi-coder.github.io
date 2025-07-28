@@ -60,10 +60,10 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold text-foreground mb-4">Vettvangur</h4>
             <ul className="space-y-2">
-              <li><a href="#" className="text-muted-foreground hover:text-foreground transition-smooth">Einkatilboð</a></li>
+              <li><a href="#" className="text-muted-foreground hover:text-foreground transition-smooth">Aftur heim</a></li>
               <li><a href="#" className="text-muted-foreground hover:text-foreground transition-smooth">Þjálfunaráætlanir</a></li>
               <li><a href="#" className="text-muted-foreground hover:text-foreground transition-smooth">Næringaráætlanir</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-foreground transition-smooth">Þjálfunarapp</a></li>
+              <li><a href="#" className="text-muted-foreground hover:text-foreground transition-smooth">Þjálfunarapp</a></li> 
             </ul>
           </div>
           
