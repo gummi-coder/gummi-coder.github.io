@@ -168,7 +168,7 @@ const Contact = () => {
                       <Textarea
                         id="goals"
                         name="goals"
-                        placeholder="Lýsdu aðal markmiðum þínum (t.d. þyngdartap, vöðvaaukning, styrkur, þol, o.s.frv.)"
+                        placeholder="Lýstu aðal markmiðum þínum (t.d. þyngdartap, vöðvaaukning, styrkur, þol, o.s.frv.)"
                         value={formData.goals}
                         onChange={(e) => handleInputChange("goals", e.target.value)}
                         className="min-h-[100px]"
