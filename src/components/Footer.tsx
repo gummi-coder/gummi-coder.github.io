@@ -4,9 +4,7 @@ import {
   Instagram, 
   Twitter, 
   Youtube, 
-  Mail,
-  MapPin,
-  Phone
+  Mail
 } from "lucide-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import logo from "@/assets/gf-training-logo.png";
@@ -104,14 +102,6 @@ export default function Footer() {
             
             {/* Contact Info */}
             <div className="space-y-2 text-sm">
-              <div className="flex items-center gap-2 text-muted-foreground">
-                <MapPin className="w-4 h-4" />
-                <span>Hafnarstræti 10, 101 Reykjavík</span>
-              </div>
-              <div className="flex items-center gap-2 text-muted-foreground">
-                <Phone className="w-4 h-4" />
-                <span>+354 898 8888</span>
-              </div>
               <div className="flex items-center gap-2 text-muted-foreground">
                 <Mail className="w-4 h-4" />
                 <span>gummi@gftraining.is</span>
