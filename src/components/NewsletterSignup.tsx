@@ -16,16 +16,26 @@ export function NewsletterSignup() {
     setMessage('');
 
     try {
-      // Submit to ConvertKit using a simple form submission
-      const formData = new FormData();
+      console.log('Submitting email:', email);
+      
+      // Try using URLSearchParams instead of FormData
+      const formData = new URLSearchParams();
       formData.append('email_address', email);
       formData.append('form', 'c94efceec0');
 
-      await fetch('https://gummi.kit.com/f/c94efceec0', {
+      console.log('Form data:', formData.toString());
+
+      const response = await fetch('https://gummi.kit.com/f/c94efceec0', {
         method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
         body: formData,
         mode: 'no-cors'
       });
+
+      console.log('Response status:', response.status);
+      console.log('Response ok:', response.ok);
 
       setEmail('');
       setMessage('Takk fyrir að skrá þig! Þú ert nú á póstlistanum.');
