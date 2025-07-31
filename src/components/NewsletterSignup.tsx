@@ -5,8 +5,6 @@ import { Mail } from "lucide-react";
 
 export function NewsletterSignup() {
   const emailRef = useRef<HTMLInputElement>(null);
-  const kitFormRef = useRef<HTMLFormElement>(null);
-  const kitEmailRef = useRef<HTMLInputElement>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [message, setMessage] = useState('');
 
@@ -29,15 +27,16 @@ export function NewsletterSignup() {
     setMessage('');
 
     try {
-      // Set the email in the hidden form
-      if (kitEmailRef.current) {
-        kitEmailRef.current.value = email;
-      }
-      
-      // Submit the form
-      if (kitFormRef.current) {
-        kitFormRef.current.submit();
-      }
+      // Submit directly to ConvertKit using fetch
+      const formData = new FormData();
+      formData.append('email_address', email);
+      formData.append('form', '67b0610893');
+
+      const response = await fetch('https://gummi.kit.com/f/67b0610893', {
+        method: 'POST',
+        body: formData,
+        mode: 'no-cors' // This is needed for ConvertKit forms
+      });
 
       // Clear the input
       if (emailRef.current) {
@@ -46,6 +45,7 @@ export function NewsletterSignup() {
 
       setMessage('Takk fyrir að skrá þig! Þú ert nú á póstlistanum.');
     } catch (error) {
+      console.error('Newsletter signup error:', error);
       setMessage('Villa kom upp. Vinsamlegast reyndu aftur.');
     } finally {
       setIsSubmitting(false);
@@ -82,23 +82,7 @@ export function NewsletterSignup() {
         </p>
       )}
 
-      {/* Falið Kit form */}
-      <iframe name="kit-frame" style={{ display: 'none' }}></iframe>
-      <form
-        ref={kitFormRef}
-        action="https://gummi.kit.com/f/67b0610893"
-        method="POST"
-        target="kit-frame"
-        style={{ display: 'none' }}
-      >
-        <input
-          type="email"
-          name="email_address"
-          ref={kitEmailRef}
-        />
-        {/* Add any additional fields your ConvertKit form might need */}
-        <input type="hidden" name="form" value="67b0610893" />
-      </form>
+      {/* ConvertKit form is now handled via fetch API */}
     </div>
   );
 } 
