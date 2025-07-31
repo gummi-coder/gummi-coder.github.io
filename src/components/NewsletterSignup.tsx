@@ -41,7 +41,7 @@ export function NewsletterSignup() {
         convertkitEmail.value = email;
       }
 
-      // Submit the ConvertKit form
+      // Submit the ConvertKit form to the iframe
       const convertkitForm = document.getElementById('convertkit-form') as HTMLFormElement;
       if (convertkitForm) {
         convertkitForm.submit();
@@ -91,10 +91,16 @@ export function NewsletterSignup() {
         </p>
       )}
 
-      {/* Hidden ConvertKit form for proper submission */}
+      {/* ConvertKit iframe for form submission */}
+      <iframe 
+        name="convertkit-iframe" 
+        style={{ display: 'none' }}
+        title="ConvertKit Form"
+      />
       <form
         action="https://gummi.kit.com/f/c94efceec0"
         method="POST"
+        target="convertkit-iframe"
         style={{ display: 'none' }}
         id="convertkit-form"
       >
