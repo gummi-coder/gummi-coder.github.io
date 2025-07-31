@@ -1,13 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play, Star } from "lucide-react";
 import { Link } from "react-router-dom";
-import { useState } from "react";
-import { Checkbox } from "@/components/ui/checkbox";
-import { Label } from "@/components/ui/label";
 import heroImage from "@/assets/hero-fitness.jpg";
 
 export default function Hero() {
-  const [agreedToTerms, setAgreedToTerms] = useState(false);
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-hero">
@@ -64,51 +60,18 @@ export default function Hero() {
             </div>
           </div>
           
-          {/* Terms Agreement */}
-          <div className="flex items-center justify-center mb-6">
-            <div className="flex items-center space-x-2">
-              <Checkbox 
-                id="terms" 
-                checked={agreedToTerms}
-                onCheckedChange={(checked) => setAgreedToTerms(checked as boolean)}
-              />
-              <Label htmlFor="terms" className="text-sm text-muted-foreground">
-                Ég samþyggi{" "}
-                <Link to="/skilmalar" className="text-primary hover:underline">
-                  skilmála
-                </Link>
-                {" "}og{" "}
-                <Link to="/skilmalar" className="text-primary hover:underline">
-                  persónuverndarstefnu
-                </Link>
-              </Label>
-            </div>
-          </div>
-          
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            {agreedToTerms ? (
-              <Link to="/contact">
-                <Button 
-                  variant="hero" 
-                  size="lg" 
-                  className="text-lg px-8 py-6"
-                >
-                  Byrjaðu í dag
-                  <ArrowRight className="w-5 h-5" />
-                </Button>
-              </Link>
-            ) : (
+            <Link to="/contact">
               <Button 
                 variant="hero" 
                 size="lg" 
-                className="text-lg px-8 py-6 opacity-50 cursor-not-allowed"
-                disabled
+                className="text-lg px-8 py-6"
               >
                 Byrjaðu í dag
                 <ArrowRight className="w-5 h-5" />
               </Button>
-            )}
+            </Link>
           </div>
           
           {/* Trust Indicator */}
