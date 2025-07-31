@@ -11,14 +11,14 @@ export function NewsletterSignup() {
   // Load ConvertKit script
   useEffect(() => {
     const script = document.createElement('script');
-    script.src = 'https://gummi.kit.com/67b0610893/index.js';
+    script.src = 'https://gummi.kit.com/c94efceec0/index.js';
     script.async = true;
-    script.setAttribute('data-uid', '67b0610893');
+    script.setAttribute('data-uid', 'c94efceec0');
     document.body.appendChild(script);
 
     return () => {
       // Cleanup script when component unmounts
-      const existingScript = document.querySelector(`script[data-uid="67b0610893"]`);
+      const existingScript = document.querySelector(`script[data-uid="c94efceec0"]`);
       if (existingScript) {
         existingScript.remove();
       }
@@ -93,7 +93,7 @@ export function NewsletterSignup() {
 
       {/* Hidden ConvertKit form for proper submission */}
       <form
-        action="https://gummi.kit.com/f/67b0610893"
+        action="https://gummi.kit.com/f/c94efceec0"
         method="POST"
         style={{ display: 'none' }}
         id="convertkit-form"
