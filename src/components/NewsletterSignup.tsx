@@ -8,22 +8,7 @@ export function NewsletterSignup() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [message, setMessage] = useState('');
 
-  // Load ConvertKit script
-  useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://gummi.kit.com/c94efceec0/index.js';
-    script.async = true;
-    script.setAttribute('data-uid', 'c94efceec0');
-    document.body.appendChild(script);
-
-    return () => {
-      // Cleanup script when component unmounts
-      const existingScript = document.querySelector(`script[data-uid="c94efceec0"]`);
-      if (existingScript) {
-        existingScript.remove();
-      }
-    };
-  }, []);
+  // ConvertKit API handles subscription directly - no script needed
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -35,24 +20,30 @@ export function NewsletterSignup() {
     setMessage('');
 
     try {
-      // Set the email in the hidden ConvertKit form
-      const convertkitEmail = document.getElementById('convertkit-email') as HTMLInputElement;
-      if (convertkitEmail) {
-        convertkitEmail.value = email;
-      }
+      // Use ConvertKit API to subscribe the user
+      const response = await fetch('https://api.convertkit.com/v3/forms/c94efceec0/subscribe', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          api_key: 'z7HghIE6el8mQxJvAet-zw',
+          email: email,
+          first_name: '', // Optional: you can add a first name field if needed
+        }),
+      });
 
-      // Submit the ConvertKit form to the iframe
-      const convertkitForm = document.getElementById('convertkit-form') as HTMLFormElement;
-      if (convertkitForm) {
-        convertkitForm.submit();
+      if (response.ok) {
+        // Clear the input
+        if (emailRef.current) {
+          emailRef.current.value = '';
+        }
+        setMessage('Takk fyrir að skrá þig! Þú ert nú á póstlistanum.');
+      } else {
+        const errorData = await response.json();
+        console.error('ConvertKit API error:', errorData);
+        setMessage('Villa kom upp. Vinsamlegast reyndu aftur.');
       }
-
-      // Clear the input
-      if (emailRef.current) {
-        emailRef.current.value = '';
-      }
-
-      setMessage('Takk fyrir að skrá þig! Þú ert nú á póstlistanum.');
     } catch (error) {
       console.error('Newsletter signup error:', error);
       setMessage('Villa kom upp. Vinsamlegast reyndu aftur.');
@@ -91,25 +82,7 @@ export function NewsletterSignup() {
         </p>
       )}
 
-      {/* ConvertKit iframe for form submission */}
-      <iframe 
-        name="convertkit-iframe" 
-        style={{ display: 'none' }}
-        title="ConvertKit Form"
-      />
-      <form
-        action="https://gummi.kit.com/f/c94efceec0"
-        method="POST"
-        target="convertkit-iframe"
-        style={{ display: 'none' }}
-        id="convertkit-form"
-      >
-        <input
-          type="email"
-          name="email_address"
-          id="convertkit-email"
-        />
-      </form>
+      {/* ConvertKit API handles subscription directly */}
     </div>
   );
 } 
