@@ -54,7 +54,7 @@ export function NewsletterSignup() {
       <iframe name="kit-frame" style={{ display: 'none' }}></iframe>
       <form
         ref={kitFormRef}
-        action="https://gummi.kit.com/f/7206859c46"
+        action="https://gummi.kit.com/f/67b0610893"
         method="POST"
         target="kit-frame"
         style={{ display: 'none' }}
