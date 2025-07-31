@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Mail } from "lucide-react";
@@ -7,6 +7,8 @@ export function NewsletterSignup() {
   const emailRef = useRef<HTMLInputElement>(null);
   const kitFormRef = useRef<HTMLFormElement>(null);
   const kitEmailRef = useRef<HTMLInputElement>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [message, setMessage] = useState('');
 
   // Kit script is not needed since we're handling form submission manually
   // useEffect(() => {
@@ -17,18 +19,37 @@ export function NewsletterSignup() {
   //   document.body.appendChild(script);
   // }, []);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
-    const email = emailRef.current.value;
+    
+    const email = emailRef.current?.value;
     if (!email) return;
 
-    kitEmailRef.current.value = email;
-    kitFormRef.current.submit();
+    setIsSubmitting(true);
+    setMessage('');
 
-    // Optional: clearing and confirmation
-    emailRef.current.value = '';
-    alert('Takk fyrir að skrá þig!');
+    try {
+      // Set the email in the hidden form
+      if (kitEmailRef.current) {
+        kitEmailRef.current.value = email;
+      }
+      
+      // Submit the form
+      if (kitFormRef.current) {
+        kitFormRef.current.submit();
+      }
+
+      // Clear the input
+      if (emailRef.current) {
+        emailRef.current.value = '';
+      }
+
+      setMessage('Takk fyrir að skrá þig! Þú ert nú á póstlistanum.');
+    } catch (error) {
+      setMessage('Villa kom upp. Vinsamlegast reyndu aftur.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -44,11 +65,22 @@ export function NewsletterSignup() {
           placeholder="Sláðu inn netfang"
           className="bg-background border-border/50"
           required
+          disabled={isSubmitting}
         />
-        <Button type="submit" variant="hero" size="sm">
-          <Mail className="w-4 h-4" />
+        <Button type="submit" variant="hero" size="sm" disabled={isSubmitting}>
+          {isSubmitting ? (
+            <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+          ) : (
+            <Mail className="w-4 h-4" />
+          )}
         </Button>
       </form>
+      
+      {message && (
+        <p className={`text-sm ${message.includes('Takk') ? 'text-green-600' : 'text-red-600'}`}>
+          {message}
+        </p>
+      )}
 
       {/* Falið Kit form */}
       <iframe name="kit-frame" style={{ display: 'none' }}></iframe>
@@ -64,6 +96,8 @@ export function NewsletterSignup() {
           name="email_address"
           ref={kitEmailRef}
         />
+        {/* Add any additional fields your ConvertKit form might need */}
+        <input type="hidden" name="form" value="67b0610893" />
       </form>
     </div>
   );
