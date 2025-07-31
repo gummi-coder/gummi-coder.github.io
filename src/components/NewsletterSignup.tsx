@@ -1,22 +1,41 @@
-import { useEffect } from 'react';
+import { useState } from 'react';
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { Mail } from "lucide-react";
 
 export function NewsletterSignup() {
-  useEffect(() => {
-    // Load ConvertKit script
-    const script = document.createElement('script');
-    script.src = 'https://gummi.kit.com/c94efceec0/index.js';
-    script.async = true;
-    script.setAttribute('data-uid', 'c94efceec0');
-    document.body.appendChild(script);
+  const [email, setEmail] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [message, setMessage] = useState('');
 
-    return () => {
-      // Cleanup
-      const existingScript = document.querySelector(`script[data-uid="c94efceec0"]`);
-      if (existingScript) {
-        existingScript.remove();
-      }
-    };
-  }, []);
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email) return;
+
+    setIsSubmitting(true);
+    setMessage('');
+
+    try {
+      // Submit to ConvertKit using a simple form submission
+      const formData = new FormData();
+      formData.append('email_address', email);
+      formData.append('form', 'c94efceec0');
+
+      await fetch('https://gummi.kit.com/f/c94efceec0', {
+        method: 'POST',
+        body: formData,
+        mode: 'no-cors'
+      });
+
+      setEmail('');
+      setMessage('Takk fyrir að skrá þig! Þú ert nú á póstlistanum.');
+    } catch (error) {
+      console.error('Newsletter signup error:', error);
+      setMessage('Villa kom upp. Vinsamlegast reyndu aftur.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <div>
@@ -25,13 +44,30 @@ export function NewsletterSignup() {
         Fáðu nýjustu upplýsingar um heilsu og líkamsrækt.
       </p>
       
-      {/* ConvertKit Embed Form */}
-      <div 
-        className="convertkit-form"
-        data-uid="c94efceec0"
-        data-format="inline"
-        data-version="5"
-      />
+      <form onSubmit={handleSubmit} className="flex gap-2 mb-4">
+        <Input
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder="Sláðu inn netfang"
+          className="bg-background border-border/50"
+          required
+          disabled={isSubmitting}
+        />
+        <Button type="submit" variant="hero" size="sm" disabled={isSubmitting}>
+          {isSubmitting ? (
+            <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+          ) : (
+            <Mail className="w-4 h-4" />
+          )}
+        </Button>
+      </form>
+      
+      {message && (
+        <p className={`text-sm ${message.includes('Takk') ? 'text-green-600' : 'text-red-600'}`}>
+          {message}
+        </p>
+      )}
     </div>
   );
 } 
