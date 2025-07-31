@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Mail } from "lucide-react";
@@ -8,14 +8,22 @@ export function NewsletterSignup() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [message, setMessage] = useState('');
 
-  // Kit script is not needed since we're handling form submission manually
-  // useEffect(() => {
-  //   const script = document.createElement('script');
-  //   script.src = 'https://gummi.kit.com/7206859c46/index.js';
-  //   script.async = true;
-  //   script.setAttribute('data-uid', '7206859c46');
-  //   document.body.appendChild(script);
-  // }, []);
+  // Load ConvertKit script
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://gummi.kit.com/67b0610893/index.js';
+    script.async = true;
+    script.setAttribute('data-uid', '67b0610893');
+    document.body.appendChild(script);
+
+    return () => {
+      // Cleanup script when component unmounts
+      const existingScript = document.querySelector(`script[data-uid="67b0610893"]`);
+      if (existingScript) {
+        existingScript.remove();
+      }
+    };
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -27,16 +35,17 @@ export function NewsletterSignup() {
     setMessage('');
 
     try {
-      // Submit directly to ConvertKit using fetch
-      const formData = new FormData();
-      formData.append('email_address', email);
-      formData.append('form', '67b0610893');
+      // Set the email in the hidden ConvertKit form
+      const convertkitEmail = document.getElementById('convertkit-email') as HTMLInputElement;
+      if (convertkitEmail) {
+        convertkitEmail.value = email;
+      }
 
-      const response = await fetch('https://gummi.kit.com/f/67b0610893', {
-        method: 'POST',
-        body: formData,
-        mode: 'no-cors' // This is needed for ConvertKit forms
-      });
+      // Submit the ConvertKit form
+      const convertkitForm = document.getElementById('convertkit-form') as HTMLFormElement;
+      if (convertkitForm) {
+        convertkitForm.submit();
+      }
 
       // Clear the input
       if (emailRef.current) {
@@ -82,7 +91,19 @@ export function NewsletterSignup() {
         </p>
       )}
 
-      {/* ConvertKit form is now handled via fetch API */}
+      {/* Hidden ConvertKit form for proper submission */}
+      <form
+        action="https://gummi.kit.com/f/67b0610893"
+        method="POST"
+        style={{ display: 'none' }}
+        id="convertkit-form"
+      >
+        <input
+          type="email"
+          name="email_address"
+          id="convertkit-email"
+        />
+      </form>
     </div>
   );
 } 
