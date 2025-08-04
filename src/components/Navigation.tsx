@@ -39,8 +39,8 @@ export default function Navigation() {
             <img
               src={logo}
               alt="GF Training logo"
-              className="h-16 w-auto object-contain drop-shadow"
-              style={{ maxWidth: 200 }}
+              className="h-20 w-auto object-contain drop-shadow"
+              style={{ maxWidth: 250 }}
             />
           </Link>
           
