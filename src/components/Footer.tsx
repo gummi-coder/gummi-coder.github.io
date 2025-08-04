@@ -43,8 +43,8 @@ export default function Footer() {
               <img
                 src={logo}
                 alt="GF Training logo"
-                className="h-12 w-auto object-contain drop-shadow"
-                style={{ maxWidth: 150 }}
+                className="h-16 w-auto object-contain drop-shadow"
+                style={{ maxWidth: 200 }}
               />
             </div>
             <p className="text-muted-foreground mb-6 leading-relaxed">
