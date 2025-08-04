@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import logo from "@/assets/gf-training-logo.png";
+import logo from "@/assets/gf-training-logo.svg";
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);

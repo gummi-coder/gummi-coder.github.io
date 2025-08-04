@@ -7,7 +7,7 @@ import {
   Mail
 } from "lucide-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import logo from "@/assets/gf-training-logo.png";
+import logo from "@/assets/gf-training-logo.svg";
 import { NewsletterSignup } from "./NewsletterSignup";
 
 export default function Footer() {
