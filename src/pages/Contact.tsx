@@ -77,7 +77,10 @@ const Contact = () => {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <form action="https://formsubmit.co/gummi@gftraining.is" method="POST" className="space-y-6">
+                <form action="https://api.web3forms.com/submit" method="POST" className="space-y-6">
+                  <input type="hidden" name="access_key" value="7274f494-00f9-4fb3-8581-b1e8a5794aac" />
+                  <input type="hidden" name="subject" value="New Training Signup - GF Training" />
+                  <input type="hidden" name="from_name" value="GF Training Website" />
                   {/* Personal Information */}
                   <div className="space-y-4">
                     <h3 className="text-lg font-semibold text-foreground border-b border-border pb-2">Persónulegar upplýsingar</h3>
