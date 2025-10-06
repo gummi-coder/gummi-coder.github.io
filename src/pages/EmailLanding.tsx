@@ -66,10 +66,6 @@ const EmailLanding = () => {
         
         {/* Hero Section - Responsive */}
         <div className="text-center mb-8 lg:mb-16">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-full px-3 py-1.5 mb-4 sm:px-4 sm:py-2 lg:mb-6">
-            <span className="text-xs font-medium text-primary sm:text-sm">30 daga ókeypis áætlun</span>
-          </div>
           
           <div className="mb-6 lg:mb-8">
             <img 
