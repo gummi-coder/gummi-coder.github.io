@@ -67,24 +67,21 @@ const EmailLanding = () => {
         {/* Hero Section - Responsive */}
         <div className="text-center mb-3 lg:mb-16">
           
-          <div className="mb-2 sm:mb-6 lg:mb-8">
+          <div className="mb-2 sm:mb-6 lg:mb-8 hidden sm:block">
             <img 
               src={logoImage} 
               alt="GF Training Logo" 
-              className="w-12 h-12 mx-auto object-contain sm:w-32 sm:h-32 lg:w-40 lg:h-40"
+              className="w-32 h-32 mx-auto object-contain lg:w-40 lg:h-40"
             />
           </div>
           <h1 className="text-lg font-bold text-foreground mb-2 leading-tight sm:text-3xl lg:text-4xl lg:mb-6">
-            <span className="block sm:inline">Vertu sterkari, grennri</span>
-            <span className="bg-gradient-primary bg-clip-text text-transparent block sm:inline sm:ml-2">og stöðugri</span>
-            <span className="block sm:block">– á aðeins 30 dögum</span>
-            <span className="bg-gradient-secondary bg-clip-text text-transparent block">(án giska og kúr-vitleysu)</span>
+            <span className="block sm:inline">Vertu sterkari og grennri</span>
+            <span className="block sm:block">– á 30 dögum</span>
+            <span className="bg-gradient-secondary bg-clip-text text-transparent block hidden sm:block">(án giska og kúr-vitleysu)</span>
           </h1>
           
-          <p className="text-xs text-muted-foreground mb-2 leading-relaxed sm:text-lg lg:text-xl lg:max-w-4xl lg:mx-auto lg:mb-8">
-            ÓKEYPIS 30 daga æfinga- og næringarsería í tölvupósti<br className="sm:hidden"/>
-            <span className="hidden sm:inline"> - </span>
-            Einföld dagleg skref sem virka í alvöru. Engin vitleysa — bara plan, stuðningur og mælanlegur árangur.
+          <p className="text-xs text-muted-foreground mb-2 leading-relaxed sm:text-lg lg:text-xl lg:max-w-4xl lg:mx-auto lg:mb-8 hidden sm:block">
+            ÓKEYPIS 30 daga æfinga- og næringarsería í tölvupósti - Einföld dagleg skref sem virka í alvöru. Engin vitleysa — bara plan, stuðningur og mælanlegur árangur.
           </p>
         </div>
 
