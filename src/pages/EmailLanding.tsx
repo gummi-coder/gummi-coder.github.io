@@ -62,16 +62,16 @@ const EmailLanding = () => {
       `}</style>
       
       {/* Responsive Container */}
-      <div className="max-w-md mx-auto px-4 py-8 sm:max-w-2xl sm:px-6 sm:py-12 lg:max-w-6xl lg:py-20">
+      <div className="max-w-md mx-auto px-4 py-4 sm:max-w-2xl sm:px-6 sm:py-12 lg:max-w-6xl lg:py-20">
         
         {/* Hero Section - Responsive */}
-        <div className="text-center mb-8 lg:mb-16">
+        <div className="text-center mb-6 lg:mb-16">
           
-          <div className="mb-6 lg:mb-8">
+          <div className="mb-4 sm:mb-6 lg:mb-8">
             <img 
               src={logoImage} 
               alt="GF Training Logo" 
-              className="w-24 h-24 mx-auto object-contain sm:w-32 sm:h-32 lg:w-40 lg:h-40"
+              className="w-20 h-20 mx-auto object-contain sm:w-32 sm:h-32 lg:w-40 lg:h-40"
             />
           </div>
           <h1 className="text-2xl font-bold text-foreground mb-4 leading-tight sm:text-3xl lg:text-4xl lg:mb-6">
@@ -81,7 +81,7 @@ const EmailLanding = () => {
             <span className="bg-gradient-secondary bg-clip-text text-transparent block">(án giska og kúr-vitleysu)</span>
           </h1>
           
-          <p className="text-base text-muted-foreground mb-6 leading-relaxed sm:text-lg lg:text-xl lg:max-w-4xl lg:mx-auto lg:mb-8">
+          <p className="text-sm text-muted-foreground mb-4 leading-relaxed sm:text-lg lg:text-xl lg:max-w-4xl lg:mx-auto lg:mb-8">
             ÓKEYPIS 30 daga æfinga- og næringarsería í tölvupósti<br className="sm:hidden"/>
             <span className="hidden sm:inline"> - </span>
             Einföld dagleg skref sem virka í alvöru. Engin vitleysa — bara plan, stuðningur og mælanlegur árangur.
@@ -89,8 +89,8 @@ const EmailLanding = () => {
         </div>
 
         {/* Email Form - Above the Fold */}
-        <Card className="mb-8 shadow-elegant border border-border/50 lg:mb-12">
-          <CardContent className="p-6 sm:p-8 lg:p-10">
+        <Card className="mb-6 shadow-elegant border border-border/50 lg:mb-12">
+          <CardContent className="p-4 sm:p-8 lg:p-10">
             <form 
               action="https://app.kit.com/forms/8632963/subscriptions" 
               className="seva-form formkit-form" 
