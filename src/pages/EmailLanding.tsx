@@ -62,26 +62,26 @@ const EmailLanding = () => {
       `}</style>
       
       {/* Responsive Container */}
-      <div className="max-w-md mx-auto px-4 py-4 sm:max-w-2xl sm:px-6 sm:py-12 lg:max-w-6xl lg:py-20">
+      <div className="max-w-md mx-auto px-4 py-2 sm:max-w-2xl sm:px-6 sm:py-12 lg:max-w-6xl lg:py-20">
         
         {/* Hero Section - Responsive */}
-        <div className="text-center mb-6 lg:mb-16">
+        <div className="text-center mb-4 lg:mb-16">
           
-          <div className="mb-4 sm:mb-6 lg:mb-8">
+          <div className="mb-3 sm:mb-6 lg:mb-8">
             <img 
               src={logoImage} 
               alt="GF Training Logo" 
-              className="w-20 h-20 mx-auto object-contain sm:w-32 sm:h-32 lg:w-40 lg:h-40"
+              className="w-16 h-16 mx-auto object-contain sm:w-32 sm:h-32 lg:w-40 lg:h-40"
             />
           </div>
-          <h1 className="text-2xl font-bold text-foreground mb-4 leading-tight sm:text-3xl lg:text-4xl lg:mb-6">
+          <h1 className="text-xl font-bold text-foreground mb-3 leading-tight sm:text-3xl lg:text-4xl lg:mb-6">
             <span className="block sm:inline">Vertu sterkari, grennri</span>
             <span className="bg-gradient-primary bg-clip-text text-transparent block sm:inline sm:ml-2">og stöðugri</span>
             <span className="block sm:block">– á aðeins 30 dögum</span>
             <span className="bg-gradient-secondary bg-clip-text text-transparent block">(án giska og kúr-vitleysu)</span>
           </h1>
           
-          <p className="text-sm text-muted-foreground mb-4 leading-relaxed sm:text-lg lg:text-xl lg:max-w-4xl lg:mx-auto lg:mb-8">
+          <p className="text-xs text-muted-foreground mb-3 leading-relaxed sm:text-lg lg:text-xl lg:max-w-4xl lg:mx-auto lg:mb-8">
             ÓKEYPIS 30 daga æfinga- og næringarsería í tölvupósti<br className="sm:hidden"/>
             <span className="hidden sm:inline"> - </span>
             Einföld dagleg skref sem virka í alvöru. Engin vitleysa — bara plan, stuðningur og mælanlegur árangur.
@@ -89,8 +89,8 @@ const EmailLanding = () => {
         </div>
 
         {/* Email Form - Above the Fold */}
-        <Card className="mb-6 shadow-elegant border border-border/50 lg:mb-12">
-          <CardContent className="p-4 sm:p-8 lg:p-10">
+        <Card className="mb-4 shadow-elegant border border-border/50 lg:mb-12">
+          <CardContent className="p-3 sm:p-8 lg:p-10">
             <form 
               action="https://app.kit.com/forms/8632963/subscriptions" 
               className="seva-form formkit-form" 
@@ -119,11 +119,11 @@ const EmailLanding = () => {
                         borderRadius: '4px', 
                         fontWeight: '400',
                         width: '100%',
-                        height: '48px',
-                        padding: '12px',
+                        height: '44px',
+                        padding: '10px',
                         fontSize: '16px',
                         border: '1px solid rgb(227, 227, 227)',
-                        marginBottom: '15px'
+                        marginBottom: '12px'
                       }}
                     />
                   </div>
@@ -141,11 +141,11 @@ const EmailLanding = () => {
                         borderRadius: '4px', 
                         fontWeight: '400',
                         width: '100%',
-                        height: '48px',
-                        padding: '12px',
+                        height: '44px',
+                        padding: '10px',
                         fontSize: '16px',
                         border: '1px solid rgb(227, 227, 227)',
-                        marginBottom: '15px'
+                        marginBottom: '12px'
                       }}
                     />
                   </div>
@@ -158,7 +158,7 @@ const EmailLanding = () => {
                       borderRadius: '4px', 
                       fontWeight: '400',
                       width: '100%',
-                      height: '48px',
+                      height: '44px',
                       fontSize: '16px',
                       border: 'none',
                       cursor: 'pointer'
@@ -299,11 +299,11 @@ const EmailLanding = () => {
                         borderRadius: '4px', 
                         fontWeight: '400',
                         width: '100%',
-                        height: '48px',
-                        padding: '12px',
+                        height: '44px',
+                        padding: '10px',
                         fontSize: '16px',
                         border: '1px solid rgb(227, 227, 227)',
-                        marginBottom: '15px'
+                        marginBottom: '12px'
                       }}
                     />
                   </div>
@@ -321,11 +321,11 @@ const EmailLanding = () => {
                         borderRadius: '4px', 
                         fontWeight: '400',
                         width: '100%',
-                        height: '48px',
-                        padding: '12px',
+                        height: '44px',
+                        padding: '10px',
                         fontSize: '16px',
                         border: '1px solid rgb(227, 227, 227)',
-                        marginBottom: '15px'
+                        marginBottom: '12px'
                       }}
                     />
                   </div>
@@ -338,7 +338,7 @@ const EmailLanding = () => {
                       borderRadius: '4px', 
                       fontWeight: '400',
                       width: '100%',
-                      height: '48px',
+                      height: '44px',
                       fontSize: '16px',
                       border: 'none',
                       cursor: 'pointer'
