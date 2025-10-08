@@ -17,7 +17,7 @@ const testimonials = [
     name: "Sigríður",
     role: "Framkvæmdastjóri",
     rating: 5,
-    text: "Ég missti 14 kíló í fjarþjálfun hjá Guðmundi! Sjúklega ánægður með peppið og stuðninginn sem ég fékk á meðan.",
+    text: "Ég missti 14 kíló í fjarþjálfun hjá Guðmundi! Sjúklega ánægð með peppið og stuðninginn sem ég fékk á meðan.",
     achievement: "Missti 14 kiló á 3 mánuði",
     before: "Var 86kg áður",
     after: "Nú er ég 72kg"
