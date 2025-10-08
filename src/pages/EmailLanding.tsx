@@ -75,10 +75,9 @@ const EmailLanding = () => {
             />
           </div>
           <h1 className="text-2xl font-bold text-foreground mb-4 leading-tight sm:text-3xl lg:text-4xl lg:mb-6">
-            <span className="block sm:inline">Vertu sterkari, grennri</span>
-            <span className="bg-gradient-primary bg-clip-text text-transparent block sm:inline sm:ml-2">og stöðugri</span>
-            <span className="block sm:block">– á aðeins 30 dögum</span>
-            <span className="bg-gradient-secondary bg-clip-text text-transparent block">(án giska og kúr-vitleysu)</span>
+            <span className="block sm:inline">Næstu 30 daga ætla ég að kenna þér allt sem þú þarf að vita um</span>
+            <span className="bg-gradient-primary bg-clip-text text-transparent block sm:inline sm:ml-2">líkamsrækt, næringu og hugarfar</span>
+            <span className="block sm:block">til að lifa heilbrigðri og hollari lífstíl</span>
           </h1>
           
           <p className="text-base text-muted-foreground mb-6 leading-relaxed sm:text-lg lg:text-xl lg:max-w-4xl lg:mx-auto lg:mb-8">
@@ -221,7 +220,7 @@ const EmailLanding = () => {
             </div>
           </div>
           <p className="text-center text-muted-foreground mt-6 font-medium text-base sm:text-lg lg:text-xl lg:mt-10">
-            👉 Allt sent beint í pósthólfið þitt. Ókeypis.
+            👉 Allt sent beint í pósthólfið þitt.
           </p>
         </div>
 
@@ -264,7 +263,7 @@ const EmailLanding = () => {
 
         {/* Final Reassurance - Responsive */}
         <div className="text-center mb-8 lg:mb-12">
-          <p className="text-muted-foreground text-sm mb-2 font-medium sm:text-base lg:text-lg">100% ókeypis — hættir hvenær sem er</p>
+          <p className="text-muted-foreground text-sm mb-2 font-medium sm:text-base lg:text-lg">100% ókeypis — getur hætt hvenær sem er</p>
           <p className="text-muted-foreground text-sm sm:text-base lg:text-lg">Enginn ruslpóstur — bara aðferðir sem virka raunverulega</p>
         </div>
 
